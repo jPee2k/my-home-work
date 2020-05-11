@@ -350,11 +350,8 @@ MigrationBackup/
 .ionide/
 
 #add my rules
+**/.vscode/
 /vendor/
-.vscode/
-/.vscode/
-vscode
-/vscode/
 logs
 *.swo
 *.swp
