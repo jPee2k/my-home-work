@@ -1,3 +1,4 @@
 <?php
-	setcookie("userName", 'John');
+    setcookie("userName", 'John');
+    echo $_COOKIE["userName"];
 ?>
