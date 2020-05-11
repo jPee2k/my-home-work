@@ -1,5 +1,5 @@
 <?
-	include 'inc/headers.inc.php';
+    include 'inc/headers.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,8 +20,20 @@
 		<div id="content">
 			<!-- Заголовок -->
 			<h1><?= $header?></h1>
-			<!-- Заголовок -->
-			<!-- Область основного контента -->
+            <!-- Заголовок -->
+            <blockquote>
+                <?php
+                    include 'inc/cookie.inc.php';
+
+                    if ($visitCounter === 1) {
+                        echo "Ну здрасте! Видать вы новенький!\n";
+                    } else {
+                        echo "Долго тебя небыло, друг. Ты посетил нас уже {$visitCounter} раз(а).\n";
+                        echo "Последний визит {$lastVisit}.\n";
+                    }
+                ?>
+            </blockquote>
+            <!-- Область основного контента -->
 			<?php
 				include 'inc/routing.inc.php';
 			?>	
