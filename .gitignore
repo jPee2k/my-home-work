@@ -352,6 +352,9 @@ MigrationBackup/
 #add my rules
 /vendor/
 .vscode/
+/.vscode/
+vscode
+/vscode/
 logs
 *.swo
 *.swp
