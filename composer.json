@@ -1,0 +1,19 @@
+{
+    "name": "jpee/home-work",
+    "description": "my home exercises",
+    "authors": [
+        {
+            "name": "jpee",
+            "email": "kipishept@gmail.com"
+        }
+    ],
+    "require": {
+        "funct/funct": "^1.5",
+        "tightenco/collect": "^7.9"
+    },
+    "autoload": {
+        "files": [
+            "src/hexlet/trees/lib.php"
+        ]
+    }
+}
