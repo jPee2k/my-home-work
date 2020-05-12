@@ -3,6 +3,7 @@
 		<td align="left">
 		<p>Сколько будет 2*2?</p>
 		<form action='<?php echo $_SERVER['REQUEST_URI']?>' method='post'>
+            <input type="hidden" name="q" value="<?= ++$q ?>">
 			<input type='radio' name='answer' value='a1'>3<br>
 			<input type='radio' name='answer' value='a2'>4<br>
 			<input type='radio' name='answer' value='a3'>5<br>
