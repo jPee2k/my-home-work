@@ -1,5 +1,7 @@
 <?php
 
+namespace HomeWork\Hexlet\Challenges\ArraysQueryString;
+
 // https://ru.hexlet.io/challenges/php_associative_arrays_query_string
 
 /*

@@ -1,5 +1,7 @@
 <?php
 
+namespace HomeWork\Hexlet\Challenges\ArraysFromPairs;
+
 // https://ru.hexlet.io/challenges/php_associative_arrays_from_pairs
 
 /*
