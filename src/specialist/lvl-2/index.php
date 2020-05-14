@@ -1,10 +1,12 @@
-<?
-    include 'inc/headers.inc.php';
+<?php
+    define('PATH_LOG', 'path.log');
+    include 'inc/log.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?= $title?></title>
+        <?php include 'inc/headers.inc.php'; ?>
+		<title><?= $title ?></title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="inc/style.css" />
 	</head>
@@ -19,7 +21,7 @@
 
 		<div id="content">
 			<!-- Заголовок -->
-			<h1><?= $header?></h1>
+			<h1><?= $header ?></h1>
             <!-- Заголовок -->
             <blockquote>
                 <?php
@@ -50,6 +52,7 @@
 				<li><a href='test/index.php'>Он-лайн тест</a></li>
 				<li><a href='index.php?id=gbook'>Гостевая книга</a></li>
 				<li><a href='eshop/catalog.php'>Магазин</a></li>
+                <li><a href='index.php?id=log'>Журнал посещений</a></li>
 			</ul>
 			<!-- Навигация -->
 		</div>
