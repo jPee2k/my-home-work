@@ -353,6 +353,7 @@ MigrationBackup/
 **/.vscode/
 /.vscode/
 /vendor/
+/src/tmp
 logs
 *.swo
 *.swp
