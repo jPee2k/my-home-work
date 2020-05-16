@@ -1,6 +1,9 @@
 <?php
 
 // connection const
+
+use function HomeWork\Specialist\Lvl2\Eshop\Inc\Lib\basketInit;
+
 const DB_HOST = 'localhost';
 const DB_LOGIN = 'root';
 const DB_PASSWORD = '';
@@ -19,5 +22,8 @@ $connection = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME);
 
 if (mysqli_connect_errno()) {
     print_r("Соединение не удалось: " . mysqli_connect_error());
-    exit();
+    exit;
 }
+
+// create/init basket
+basketInit();
