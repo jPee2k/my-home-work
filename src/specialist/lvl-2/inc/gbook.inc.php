@@ -1,6 +1,11 @@
 <?php
 /* Основные настройки */
+const DB_HOST = 'localhost';
+const DB_LOGIN = 'root';
+const DB_PASSWORD = '';
+CONST DB_NAME = 'gbook';
 
+$link = mysqli_connect(DB_HOST, DB_LOGIN, DB_PASSWORD, DB_NAME);
 /* Основные настройки */
 
 /* Сохранение записи в БД */
