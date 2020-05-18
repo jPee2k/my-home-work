@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeWork\Hexlet\Challenges\ArraysToRna;
+namespace HomeWork\Hexlet\Challenges\ToRna;
 
 //https://ru.hexlet.io/challenges/php_associative_arrays_to_rna
 
@@ -61,4 +61,4 @@ function toRna($dnk)
 
 $dnk = 'ACGTGGTCTTAA';
 
-print_r(toRna($dnk)."\n");
+print_r(toRna($dnk) . "\n");

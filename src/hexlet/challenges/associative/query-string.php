@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeWork\Hexlet\Challenges\ArraysQueryString;
+namespace HomeWork\Hexlet\Challenges\QueryString;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_query_string
 
@@ -60,7 +60,7 @@ function buildQueryString($piecesOfQueryString)
     sort($result);
     return implode('&', $result);
 }
- 
-$piecesOfQueryString = ['per' => 10, 'page' => 1 ];
 
-print_r(buildQueryString($piecesOfQueryString).PHP_EOL);
+$piecesOfQueryString = ['per' => 10, 'page' => 1];
+
+print_r(buildQueryString($piecesOfQueryString) . PHP_EOL);

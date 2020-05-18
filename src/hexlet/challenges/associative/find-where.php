@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeWork\Hexlet\Challenges\ArraysFindWhere;
+namespace HomeWork\Hexlet\Challenges\FindWhere;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_find_where
 

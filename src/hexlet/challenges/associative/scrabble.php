@@ -1,6 +1,6 @@
 <?php
 
-namespace HomeWork\Hexlet\Challenges\ArraysScrabble;
+namespace HomeWork\Hexlet\Challenges\Scrabble;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_scrabble
 
@@ -27,7 +27,8 @@ namespace HomeWork\Hexlet\Challenges\ArraysScrabble;
  * // true
 */
 
-function scrabble($col, $word) {
+function scrabble($col, $word)
+{
     $symbols = str_split(strtolower($word));
     foreach ($symbols as $symbol) {
         $key = strpos($col, $symbol);
@@ -37,7 +38,7 @@ function scrabble($col, $word) {
         $col[$key] = ' ';
     }
     return true;
-} 
+}
 
 $col = 'scriptingjava';
 $word = 'JavaScript';
