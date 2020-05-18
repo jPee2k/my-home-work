@@ -2,6 +2,8 @@
 
 namespace HomeWork\Hexlet\Challenges\Associative\ToRoman;
 
+// https://ru.hexlet.io/challenges/php_associative_arrays_to_roman
+
 /*
  * Для записи цифр римляне использовали буквы 
  * латинского алфавита: I, V, X, L, C, D, M. Например:
@@ -74,7 +76,7 @@ function toRoman(int $num): string
 
 
 
-function toArabic(string $let)
+function toArabic(string $let): int
 {
     $result = 0;
     $let = strtoupper($let);
