@@ -40,8 +40,45 @@ namespace HomeWork\Hexlet\Challenges\Associative\ToRoman;
  * Подробнее о римской записи — https://ru.wikipedia.org/wiki/Римские_цифры
  */
 
-function toRoman(int $num)
+function toRoman(int $num): string
 {
+    $table = [
+        'I' => 1,
+        'IV' => 4,
+        'V' => 5,
+        'IX' => 9,
+        'X' => 10,
+        'XL' => 40,
+        'L' => 50,
+        'XC' => 90,
+        'C' => 100,
+        'CD' => 400,
+        'D' => 500,
+        'CM' => 900,
+        'M' => 1000
+    ];
+
+    $result = '';
+
+    $reversed = array_reverse($table);
+    foreach ($reversed as $roman => $arabic) {
+        $multi = intval($num / $arabic);
+        if ($multi !== 0) {
+            $result .= str_repeat($roman, $multi);
+        }
+        $num %= $arabic;
+    }
+
+    return $result;
+}
+
+
+
+function toArabic(string $let)
+{
+    $result = 0;
+    $let = strtoupper($let);
+
     $table = [
         'I' => 1,
         'V' => 5,
@@ -52,7 +89,39 @@ function toRoman(int $num)
         'M' => 1000
     ];
 
-    
+    $special = [
+        'IV' => 4,
+        'IX' => 9,
+        'XL' => 40,
+        'XC' => 90,
+        'CD' => 400,
+        'CM' => 900
+    ];
+
+    foreach ($special as $roman => $arabic) {
+        $pos = strpos($let, $roman);
+        if ($pos) {
+            $result += $arabic;
+            $let = str_replace($roman, '', $let);
+        }
+    }
+
+    for ($i = 0, $len = strlen($let); $i < $len; $i++) {
+        $result += $table[$let[$i]];
+    }
+
+    return $result;
 }
 
-print_r(toRoman(59));
+if (count($argv) === 3) {
+    $foo = $argv[1];
+    $param = $argv[2];
+
+    if ($foo == 'toRoman') {
+        print_r(toRoman($param)."\n");
+    } elseif ($foo == 'toArabic') {
+        print_r(toArabic($param)."\n");
+    }
+} else {
+    echo "Наберите: php to_roman.php 'название ф-ции' и 'конвертируемое значение'\n";
+}
