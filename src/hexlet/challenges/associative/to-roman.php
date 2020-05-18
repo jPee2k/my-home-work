@@ -42,6 +42,8 @@ namespace HomeWork\Hexlet\Challenges\Associative\ToRoman;
  * Подробнее о римской записи — https://ru.wikipedia.org/wiki/Римские_цифры
  */
 
+
+// Convert Arabic numerals to Roman
 function toRoman(int $num): string
 {
     $table = [
@@ -74,8 +76,7 @@ function toRoman(int $num): string
     return $result;
 }
 
-
-
+// Convert Roman numerals to Arabic
 function toArabic(string $let): int
 {
     $result = 0;
@@ -115,6 +116,7 @@ function toArabic(string $let): int
     return $result;
 }
 
+// Command line
 if (count($argv) === 3) {
     $foo = $argv[1];
     $param = $argv[2];
