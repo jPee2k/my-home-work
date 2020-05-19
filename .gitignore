@@ -354,6 +354,7 @@ MigrationBackup/
 /.vscode/
 /vendor/
 /src/tmp
+/src/specialist
 logs
 *.swo
 *.swp
