@@ -1,5 +1,7 @@
 <?php
 
+namespace HomeWork\Hexlet\Challenges\Index\MatrixRotation;
+
 /*
  * https://ru.hexlet.io/challenges/php_arrays_matrix_rotation
  * 
@@ -62,10 +64,12 @@ function rotateRight(array $matrix): array
     return $result;
 }
 
-$matrix = [
-    [1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 0, 1, 2],
-  ];
+/*
+ * $matrix = [
+ *     [1, 2, 3, 4],
+ *     [5, 6, 7, 8],
+ *     [9, 0, 1, 2],
+ *   ];
 
-  print_r(rotateRight($matrix));
+ * print_r(rotateRight($matrix));
+ */

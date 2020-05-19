@@ -13,7 +13,8 @@
     },
     "autoload": {
         "files": [
-            "src/hexlet/trees/lib.php"
+            "src/hexlet/trees/lib.php",
+            "src/hexlet/challenges/index/matrix-rotation.php"
         ]
     }
 }
