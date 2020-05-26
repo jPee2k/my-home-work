@@ -4,6 +4,7 @@ namespace HomeWork\Hexlet\Challenges\Functions\IpConverter;
 
 /*
  * IP конвертер
+ * https://ru.hexlet.io/challenges/php_functions_ip_converter
  * 
  * Solution.php
  * Реализуйте функции ipToInt() и intToIp(), которые преобразовывают 
