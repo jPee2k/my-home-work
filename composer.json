@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Home\\Work\\Hexlet\\Challenges\\OOP\\Introduction\\": "src/Hexlet/Challenges/OOP/Introduction"
+      "Home\\Work\\": "src/"
     },
     "files": [
       "src/Hexlet/Trees/lib.php",
