@@ -1,6 +1,6 @@
 <?php
 
-namespace Home\Work\Hexlet\Challenges\QueryString;
+namespace Home\Work\Hexlet\Challenges\Associative\QueryString;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_query_string
 

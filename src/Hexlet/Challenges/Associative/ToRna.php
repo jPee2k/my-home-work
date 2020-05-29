@@ -1,6 +1,6 @@
 <?php
 
-namespace Home\Work\Hexlet\Challenges\ToRna;
+namespace Home\Work\Hexlet\Challenges\Associative\ToRna;
 
 //https://ru.hexlet.io/challenges/php_associative_arrays_to_rna
 

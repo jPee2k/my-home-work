@@ -1,6 +1,6 @@
 <?php
 
-namespace Home\Work\Hexlet\Challenges\FromPairs;
+namespace Home\Work\Hexlet\Challenges\Associative\FromPairs;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_from_pairs
 

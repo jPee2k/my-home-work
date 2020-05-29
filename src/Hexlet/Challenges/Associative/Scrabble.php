@@ -1,6 +1,6 @@
 <?php
 
-namespace Home\Work\Hexlet\Challenges\Scrabble;
+namespace Home\Work\Hexlet\Challenges\Associative\Scrabble;
 
 // https://ru.hexlet.io/challenges/php_associative_arrays_scrabble
 
