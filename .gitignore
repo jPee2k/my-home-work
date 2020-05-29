@@ -350,8 +350,8 @@ MigrationBackup/
 .ionide/
 
 #add my rules
-**/.vscode/
 /.vscode/
+/.idea/
 /vendor/
 /src/tmp
 /src/specialist
