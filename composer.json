@@ -19,5 +19,9 @@
       "src/Hexlet/Trees/lib.php",
       "src/Hexlet/Challenges/Index/MatrixRotation.php"
     ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.1",
+    "squizlabs/php_codesniffer": "*"
   }
 }
