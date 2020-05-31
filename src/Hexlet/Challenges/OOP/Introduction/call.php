@@ -3,6 +3,8 @@
 use Home\Work\Hexlet\Challenges\OOP\Introduction\Circle;
 use Home\Work\Hexlet\Challenges\OOP\Introduction\Random;
 use Home\Work\Hexlet\Challenges\OOP\Introduction\Url;
+use Home\Work\Hexlet\Challenges\OOP\Introduction\Square;
+use Home\Work\Hexlet\Challenges\OOP\Introduction\SquaresGenerator;
 
 require __DIR__ . '/../../../../../vendor/autoload.php';
 
@@ -46,3 +48,9 @@ $url = new Url('http://yandex.ru?key=value&key2=value2');
 // print_r($url->getQueryParam('key3', 'false') . PHP_EOL);
 
 // ---------------------------------------------------------------- //
+
+$square = new Square(10);
+$square->getSide(); // 10
+
+//print_r($squares = SquaresGenerator::generate(3, 2));
+// [new Square(3), new Square(3)];
