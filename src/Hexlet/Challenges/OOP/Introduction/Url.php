@@ -5,9 +5,9 @@ namespace Home\Work\Hexlet\Challenges\OOP\Introduction;
 /**
  * Url
  * https://ru.hexlet.io/challenges/php_introduction_to_oop_url
- * 
+ *
  * src\Url.php
- * Реализуйте класс Url который описывает переданный в конструктор 
+ * Реализуйте класс Url который описывает переданный в конструктор
  * HTTP адрес и позволяет извлекать из него части:
 
  * <?php
@@ -36,7 +36,7 @@ class Url
     private $url;
     private $data;
 
-    function __construct($url)
+    public function __construct($url)
     {
         $this->url = $url;
         $this->make($this->url);

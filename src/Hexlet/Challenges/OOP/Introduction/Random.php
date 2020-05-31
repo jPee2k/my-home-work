@@ -5,12 +5,12 @@ namespace Home\Work\Hexlet\Challenges\OOP\Introduction;
 /**
  * Генератор случайных чисел
  * https://ru.hexlet.io/challenges/php_introduction_to_oop_rand
- * 
+ *
  * Random.php
- * Реализуйте генератор рандомных чисел, представленный классом Random. 
+ * Реализуйте генератор рандомных чисел, представленный классом Random.
  * Интерфейс объекта включает в себя три функции:
 
- * Конструктор. Принимает на вход seed, начальное число генератора 
+ * Конструктор. Принимает на вход seed, начальное число генератора
  * псевдослучайных чисел
  *      getNext — метод, возврающающий новое случайное число
  *      reset — метод, сбрасывающий генератор на начальное значение
@@ -42,7 +42,7 @@ class Random
     private $seed;
     private $next;
 
-    function __construct(int $seed)
+    public function __construct(int $seed)
     {
         $this->seed = $seed;
         $this->next = $this->seed;
