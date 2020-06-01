@@ -101,6 +101,10 @@ function toArabic(string $let): int
         'CM' => 900
     ];
 
+    if (array_key_exists($let, $special)) {
+        return $special[$let];
+    }
+
     foreach ($special as $roman => $arabic) {
         $pos = strpos($let, $roman);
         if ($pos) {
