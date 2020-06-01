@@ -35,9 +35,9 @@ namespace Home\Work\Hexlet\Challenges\OOP\Introduction;
 
 class Random
 {
-    const a = 37;
-    const c = 1;
-    const m = 99;
+    private const A = 37;
+    private const C = 1;
+    private const M = 99;
 
     private $seed;
     private $next;
@@ -50,7 +50,7 @@ class Random
 
     public function getNext()
     {
-        $this->next = (self::a * $this->next + self::c) % self::m;
+        $this->next = (self::A * $this->next + self::C) % self::M;
         return $this->next;
     }
 

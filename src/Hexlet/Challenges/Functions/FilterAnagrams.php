@@ -37,7 +37,7 @@ namespace Home\Work\Hexlet\Challenges\Functions\FilterAnagrams;
 
 function filterAnagrams($word, $checkWords)
 {
-    return array_filter($checkWords, function ($anagram) use ($word) {
+    return array_values(array_filter($checkWords, function ($anagram) use ($word) {
         $symbols = str_split($anagram);
         $count = 0;
         for ($i = 0, $length = strlen($word); $i < $length; $i++) {
@@ -48,7 +48,7 @@ function filterAnagrams($word, $checkWords)
             }
         }
         return $count === $length && empty($symbols) ? true : false;
-    });
+    }));
 }
 
 // $word = 'abba';

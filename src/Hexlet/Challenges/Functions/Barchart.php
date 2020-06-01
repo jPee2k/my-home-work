@@ -7,9 +7,9 @@ namespace Home\Work\Hexlet\Challenges\Functions\Barchart;
  * Столбчатая диаграмма
  
  * BarChart.php
- * Реализуйте функцию barChart(), которая выводит на экран столбчатую 
- * диаграмму. Функция принимает в качестве параметра последовательность 
- * чисел, длина которой равна количеству столбцов диаграммы. Размер 
+ * Реализуйте функцию barChart(), которая выводит на экран столбчатую
+ * диаграмму. Функция принимает в качестве параметра последовательность
+ * чисел, длина которой равна количеству столбцов диаграммы. Размер
  * диаграммы по вертикали должен определяться входными данными.
 
  * Примеры
@@ -53,46 +53,27 @@ namespace Home\Work\Hexlet\Challenges\Functions\Barchart;
 
 */
 
-function barChart($values)
+function barChart(array $numbers)
 {
-    $result = [];
-    $data = arrayFilling($values);
-    $max = max($values);
-    $min = min($values);
+    $top = abs(max($numbers));
+    $bottom = abs((min($numbers)));
+    $height = $top + $bottom;
 
-    while ($max > $min) {
-        $result[] = implode('', array_map(function ($val) use (&$max) {
-            return isset($val[$max]) ? $val[$max] : ' ';
-        }, $data));
-        $max--;
+    $lines = [];
+
+    for ($i = $height; $i > 0; $i -= 1) {
+        $row = array_map(function ($number) use ($bottom, $i) {
+            if ($i > $bottom) {
+                return $number >= $i - $bottom ? '*' : ' ';
+            }
+            return $number < $i - $bottom ? '#' : ' ';
+        }, $numbers);
+
+        $lines[] = implode('', $row);
     }
 
-    printResult($result);
-    return true;
+    print_r(implode("\n", $lines));
 }
 
-function arrayFilling($values)
-{
-    return array_reduce($values, function ($acc, $val) {
-        if ($val < 0) {
-            $acc[] = array_fill_keys(range(0, $val + 1), '#');
-        } else {
-            $acc[] = array_fill_keys(range($val, 1), '*');
-        }
-        return $acc;
-    }, []);
-}
-
-function printResult($result)
-{
-    foreach ($result as $key => $str) {
-        if ($key === 0) {
-            print_r(' => ' . $str . PHP_EOL);
-        }
-        print_r('    ' . $str . PHP_EOL);
-    }
-}
-
-// $values = [5, -2, 10, 6, 1, 2, 6, 4, 8, 1, -1, 7, 3, -5, 5];
-
+// $values = [1, 5, -3, 0, 4];
 // barChart($values);

@@ -33,7 +33,7 @@ class Circle
         return pi() * ($this->_radius ** 2);
     }
 
-    public function getCircumferrence()
+    public function getCircumference()
     {
         return 2 * pi() * $this->_radius;
     }
