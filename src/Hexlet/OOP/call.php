@@ -5,7 +5,8 @@ use Home\Work\Hexlet\OOP\Truncater;
 use Home\Work\Hexlet\OOP\DeckOfCards;
 use Home\Work\Hexlet\OOP\Booking;
 
-use function Home\Work\Hexlet\OOP\Normalize\Normalize;
+use function Home\Work\Hexlet\OOP\Normalize\normalize;
+use function Home\Work\Hexlet\OOP\GetQuestions\getQuestions;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
@@ -79,11 +80,28 @@ require __DIR__ . '/../../../vendor/autoload.php';
 
 // ************************************************************** //
 
-$booking = new Booking();
-//var_dump($booking->book('11-11-2008', '13-11-2008')); // true
-//var_dump($booking->book('12-11-2008', '12-11-2008')); // false
-//var_dump($booking->book('10-11-2008', '12-11-2008')); // false
-//var_dump($booking->book('12-11-2008', '14-11-2008')); // false
-//var_dump($booking->book('10-11-2008', '11-11-2008')); // true
-//var_dump($booking->book('13-11-2008', '14-11-2008')); // true
-//var_dump($booking->book('13-11-2008', '14-11-2008')); // false
+// $booking = new Booking();
+// var_dump($booking->book('11-11-2008', '13-11-2008')); // true
+// var_dump($booking->book('12-11-2008', '12-11-2008')); // false
+// var_dump($booking->book('10-11-2008', '12-11-2008')); // false
+// var_dump($booking->book('12-11-2008', '14-11-2008')); // false
+// var_dump($booking->book('10-11-2008', '11-11-2008')); // true
+// var_dump($booking->book('13-11-2008', '14-11-2008')); // true
+// var_dump($booking->book('13-11-2008', '14-11-2008')); // false
+
+// ************************************************************** //
+
+/*
+ * $text = <<<HEREDOC
+ * lala\r\nr
+ * ehu?
+ * vie?eii
+ * \n \t
+ * i see you
+ * /r \n
+ * one two?\r\n\n
+ * HEREDOC;
+
+ * print_r(getQuestions($text));
+ * 
+/*
