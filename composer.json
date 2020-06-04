@@ -1,27 +1,28 @@
 {
-  "name": "jpee/home-work",
-  "description": "my home exercises",
-  "authors": [
-    {
-      "name": "jpee",
-      "email": "kipishept@gmail.com"
-    }
-  ],
-  "require": {
-    "funct/funct": "^1.5",
-    "tightenco/collect": "^7.9"
-  },
-  "autoload": {
-    "psr-4": {
-      "Home\\Work\\": "src/"
+    "name": "jpee/home-work",
+    "description": "my home exercises",
+    "authors": [{
+        "name": "jpee",
+        "email": "kipishept@gmail.com"
+    }],
+    "require": {
+        "funct/funct": "^1.5",
+        "tightenco/collect": "^7.9",
+        "php-ds/php-ds": "*",
+        "nesbot/carbon": "^2.35"
     },
-    "files": [
-      "src/Hexlet/Trees/lib.php",
-      "src/Hexlet/Challenges/Index/MatrixRotation.php"
-    ]
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^9.1",
-    "squizlabs/php_codesniffer": "*"
-  }
+    "autoload": {
+        "psr-4": {
+            "Home\\Work\\": "src/"
+        },
+        "files": [
+            "src/Hexlet/Trees/lib.php",
+            "src/Hexlet/Challenges/Index/MatrixRotation.php",
+            "src/Hexlet/OOP/Normalize.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.1",
+        "squizlabs/php_codesniffer": "*"
+    }
 }
