@@ -22,5 +22,8 @@
     "bugs": {
         "url": "https://github.com/jPee2k/my-home-work/issues"
     },
-    "homepage": "https://github.com/jPee2k/my-home-work#readme"
+    "homepage": "https://github.com/jPee2k/my-home-work#readme",
+    "dependencies": {
+        "lodash": "^4.17.20"
+    }
 }
