@@ -1,0 +1,26 @@
+{
+    "name": "hexlet-setup-js",
+    "version": "1.0.0",
+    "description": "attempts to initialize and run a project in javaScript",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jPee2k/my-home-work.git"
+    },
+    "keywords": [
+        "hexlet",
+        "homework",
+        "study",
+        "exercise"
+    ],
+    "author": "jPee2k",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jPee2k/my-home-work/issues"
+    },
+    "homepage": "https://github.com/jPee2k/my-home-work#readme"
+}
