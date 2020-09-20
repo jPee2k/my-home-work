@@ -16,9 +16,9 @@
             "Home\\Work\\": "src/"
         },
         "files": [
-            "src/Hexlet/Trees/lib.php",
-            "src/Hexlet/Challenges/Index/MatrixRotation.php",
-            "src/Hexlet/OOP/Normalize.php"
+            "src/Hexlet/PHP/Trees/lib.php",
+            "src/Hexlet/PHP/Challenges/Index/MatrixRotation.php",
+            "src/Hexlet/PHP/OOP/Normalize.php"
         ]
     },
     "require-dev": {
