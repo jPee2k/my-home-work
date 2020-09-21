@@ -5,7 +5,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\Barchart;
 /*
  * https://ru.hexlet.io/challenges/php_functions_barchart
  * Столбчатая диаграмма
- 
+
  * BarChart.php
  * Реализуйте функцию barChart(), которая выводит на экран столбчатую
  * диаграмму. Функция принимает в качестве параметра последовательность
@@ -18,9 +18,9 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\Barchart;
  * use function App\Solution\barChart;
 
 // barChart([5, 10, -5, -3, 7]);
-// =>  *   
-//     *   
-//     *   
+// =>  *
+//     *
+//     *
 //     *  *
 //     *  *
 //    **  *
@@ -28,28 +28,28 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\Barchart;
 //    **  *
 //    **  *
 //    **  *
-//      ## 
-//      ## 
-//      ## 
-//      #  
-//      #  
+//      ##
+//      ##
+//      ##
+//      #
+//      #
 
 // barChart([5, -2, 10, 6, 1, 2, 6, 4, 8, 1, -1, 7, 3, -5, 5]);
-// =>   *            
-//      *            
-//      *     *      
-//      *     *  *   
-//      **  * *  *   
+// =>   *
+//      *
+//      *     *
+//      *     *  *
+//      **  * *  *
 //    * **  * *  *  *
 //    * **  ***  *  *
 //    * **  ***  ** *
 //    * ** ****  ** *
 //    * ******** ** *
-//     #        #  # 
-//     #           # 
-//                 # 
-//                 # 
-//                 # 
+//     #        #  #
+//     #           #
+//                 #
+//                 #
+//                 #
 
 */
 
@@ -62,12 +62,15 @@ function barChart(array $numbers)
     $lines = [];
 
     for ($i = $height; $i > 0; $i -= 1) {
-        $row = array_map(function ($number) use ($bottom, $i) {
-            if ($i > $bottom) {
-                return $number >= $i - $bottom ? '*' : ' ';
-            }
-            return $number < $i - $bottom ? '#' : ' ';
-        }, $numbers);
+        $row = array_map(
+            function ($number) use ($bottom, $i) {
+                if ($i > $bottom) {
+                    return $number >= $i - $bottom ? '*' : ' ';
+                }
+                return $number < $i - $bottom ? '#' : ' ';
+            },
+            $numbers
+        );
 
         $lines[] = implode('', $row);
     }

@@ -5,18 +5,18 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\FilterAnagrams;
 // https://ru.hexlet.io/challenges/php_functions_filter_anagrams
 
 /*
- * Анаграммы — это слова, которые образуются путём перестановки 
- * букв. Слова-анаграммы состоят из одного и того же набора букв 
+ * Анаграммы — это слова, которые образуются путём перестановки
+ * букв. Слова-анаграммы состоят из одного и того же набора букв
  * и имеют одинаковую длину. Например:
 
  * спаниель — апельсин
  * карат — карта — катар
  * топор — ропот — отпор
- 
+
  * src/Solution.php
- * Реализуйте функцию filterAnagrams, которая находит все анаграммы 
- * слова. Функция принимает исходное слово и список для проверки (массив), 
- * а возвращает массив всех анаграмм. Если в списке слов отсутствуют 
+ * Реализуйте функцию filterAnagrams, которая находит все анаграммы
+ * слова. Функция принимает исходное слово и список для проверки (массив),
+ * а возвращает массив всех анаграмм. Если в списке слов отсутствуют
  * анаграммы, то возвращается пустой массив.
 
  * Примеры
@@ -32,23 +32,28 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\FilterAnagrams;
 
  * filterAnagrams('laser', ['lazing', 'lazy',  'lacer']);
  * // []
- * 
+ *
  */
 
 function filterAnagrams($word, $checkWords)
 {
-    return array_values(array_filter($checkWords, function ($anagram) use ($word) {
-        $symbols = str_split($anagram);
-        $count = 0;
-        for ($i = 0, $length = strlen($word); $i < $length; $i++) {
-            if (in_array($word[$i], $symbols)) {
-                $key = array_search($word[$i], $symbols);
-                unset($symbols[$key]);
-                $count++;
+    return array_values(
+        array_filter(
+            $checkWords,
+            function ($anagram) use ($word) {
+                $symbols = str_split($anagram);
+                $count = 0;
+                for ($i = 0, $length = strlen($word); $i < $length; $i++) {
+                    if (in_array($word[$i], $symbols)) {
+                        $key = array_search($word[$i], $symbols);
+                        unset($symbols[$key]);
+                        $count++;
+                    }
+                }
+                return $count === $length && empty($symbols) ? true : false;
             }
-        }
-        return $count === $length && empty($symbols) ? true : false;
-    }));
+        )
+    );
 }
 
 // $word = 'abba';

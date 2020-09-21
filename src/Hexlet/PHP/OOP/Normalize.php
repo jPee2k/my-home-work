@@ -15,8 +15,8 @@ function normalize(array $assoc)
 {
     $collection = collect($assoc);
 
-    return $collection->map(fn($items) => array_map(fn($item) => trim(strtolower($item)), $items))
-        ->unique(fn($item) => $item['name'] . $item['country'])
+    return $collection->map(fn ($items) => array_map(fn ($item) => trim(strtolower($item)), $items))
+        ->unique(fn ($item) => $item['name'] . $item['country'])
         ->sortBy(fn ($city) => $city['name'])
         ->mapToGroups(fn ($item) => [$item['country'] => $item['name']])
         ->sortKeys()

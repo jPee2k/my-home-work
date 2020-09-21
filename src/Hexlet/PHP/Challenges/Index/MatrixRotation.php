@@ -64,6 +64,6 @@ function rotateRight(array $matrix): array
  *     [5, 6, 7, 8],
  *     [9, 0, 1, 2],
  *   ];
- * 
+ *
  * print_r(rotateRight($matrix));
 */

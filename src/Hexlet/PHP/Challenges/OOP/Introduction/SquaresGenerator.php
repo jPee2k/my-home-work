@@ -2,10 +2,10 @@
 
 namespace Home\Work\Hexlet\PHP\Challenges\OOP\Introduction;
 
-/** 
+/**
  * Генератор квадратов
  * https://ru.hexlet.io/challenges/php_introduction_to_oop_square
- * 
+ *
  * src/SquaresGenerator.php
  * Реализуйте класс SquaresGenerator со статическим методом
  * generate, принимающим два параметра: сторону и количество
@@ -16,7 +16,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\OOP\Introduction;
 
  * $squares = SquaresGenerator::generate(3, 2);
  * // [new Square(3), new Square(3)];
-*/
+ */
 
 class SquaresGenerator
 {

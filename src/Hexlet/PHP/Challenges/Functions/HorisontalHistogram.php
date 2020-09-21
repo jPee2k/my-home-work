@@ -5,7 +5,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\HorisontalHistogram;
 /*
  * Горизонтальная гистограмма
  * https://ru.hexlet.io/challenges/php_functions_horisontal_histogram
- *  
+ *
  * Solution.php
  * Реализуйте функцию play, которая выводит на экран горизонтальную гистограмму.
  * Функция принимает на вход количество бросков кубика и функцию, которая
@@ -19,7 +19,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\HorisontalHistogram;
  * когда количество равно 0 (нулю).
 
  * Примеры
- * 
+ *
  * <?php
 
     play(100, rollDie);
@@ -36,7 +36,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\HorisontalHistogram;
     // 3|## 2
     // 4|
     // 5|#### 4
-    // 6|# 1 
+    // 6|# 1
 
  * Подсказки
  * Гистограмма https://ru.wikipedia.org/wiki/%D0%93%D0%B8%D1%81%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0
@@ -58,11 +58,14 @@ function play($count, string $foo)
         $count--;
     }
 
-    $preparedString = array_map(function ($roll) {
-        $count = count($roll);
-        $hashTags = str_repeat('#', $count);
-        return "|{$hashTags} {$count}";
-    }, $acc);
+    $preparedString = array_map(
+        function ($roll) {
+            $count = count($roll);
+            $hashTags = str_repeat('#', $count);
+            return "|{$hashTags} {$count}";
+        },
+        $acc
+    );
 
     sort($preparedString);
     printResult($preparedString);

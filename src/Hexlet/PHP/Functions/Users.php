@@ -23,13 +23,19 @@ $users = [
 
 function getGirlFriends($users)
 {
-    $friends = array_map(function ($user) {
-        return $user['friends'];
-    }, $users);
+    $friends = array_map(
+        function ($user) {
+            return $user['friends'];
+        },
+        $users
+    );
 
-    $girls = array_filter(flatten($friends), function ($user) {
-        return $user['gender'] === 'female';
-    });
+    $girls = array_filter(
+        flatten($friends),
+        function ($user) {
+            return $user['gender'] === 'female';
+        }
+    );
 
     return array_values($girls);
 }

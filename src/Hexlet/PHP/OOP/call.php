@@ -103,5 +103,5 @@ require __DIR__ . '/../../../../vendor/autoload.php';
  * HEREDOC;
 
  * print_r(getQuestions($text));
- * 
+ *
 /*

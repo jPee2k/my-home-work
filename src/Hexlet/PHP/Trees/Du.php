@@ -13,45 +13,67 @@ use function Home\Work\Hexlet\PHP\Trees\mkdir;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$tree = mkdir('/', [
-    mkdir('etc', [
-        mkdir('apache'),
-        mkdir('nginx', [
-            mkfile('nginx.conf', ['size' => 800]),
-        ]),
-        mkdir('consul', [
-            mkfile('config.json', ['size' => 1200]),
-            mkfile('data', ['size' => 8200]),
-            mkfile('raft', ['size' => 80]),
-        ]),
-    ]),
-    mkfile('hosts', ['size' => 3500]),
-    mkfile('resolve', ['size' => 1000]),
-]);
+$tree = mkdir(
+    '/',
+    [
+        mkdir(
+            'etc',
+            [
+                mkdir('apache'),
+                mkdir(
+                    'nginx',
+                    [
+                        mkfile('nginx.conf', ['size' => 800]),
+                    ]
+                ),
+                mkdir(
+                    'consul',
+                    [
+                        mkfile('config.json', ['size' => 1200]),
+                        mkfile('data', ['size' => 8200]),
+                        mkfile('raft', ['size' => 80]),
+                    ]
+                ),
+            ]
+        ),
+        mkfile('hosts', ['size' => 3500]),
+        mkfile('resolve', ['size' => 1000]),
+    ]
+);
 
 // BEGIN
 function addSize($node)
 {
-    return reduce(function ($acc, $tree) {
-        if (isDirectory($tree)) {
-            return $acc;
-        }
+    return reduce(
+        function ($acc, $tree) {
+            if (isDirectory($tree)) {
+                return $acc;
+            }
 
-        $meta = getMeta($tree);
+            $meta = getMeta($tree);
 
-        return $acc + $meta['size'];
-    }, $node, 0);
+            return $acc + $meta['size'];
+        },
+        $node,
+        0
+    );
 }
 
 function du($node)
 {
-    $result = array_map(function ($node) {
-        return [getName($node), addSize($node)];
-    }, getChildren($node));
+    $result = array_map(
+        function ($node) {
+            return [getName($node), addSize($node)];
+        },
+        getChildren($node)
+    );
 
-    usort($result, function ($arr1, $arr2) {
-        return $arr2[1] <=> $arr1[1];
-    });
+    usort(
+        $result,
+        function ($arr1, $arr2) {
+            return $arr2[1] <=> $arr1[1];
+        }
+    );
 
     return $result;
 }

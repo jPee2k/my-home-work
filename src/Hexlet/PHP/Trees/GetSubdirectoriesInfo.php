@@ -11,21 +11,33 @@ use function Home\Work\Hexlet\PHP\Trees\getName;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$tree = mkdir('/', [
-    mkdir('etc', [
-        mkdir('apache'),
-        mkdir('nginx', [
-            mkfile('nginx.conf'),
-        ]),
-    ]),
-    mkdir('consul', [
-        mkfile('config.json'),
-        mkfile('file.tmp'),
-        mkdir('data'),
-    ]),
-    mkfile('hosts'),
-    mkfile('resolve'),
-]);
+$tree = mkdir(
+    '/',
+    [
+        mkdir(
+            'etc',
+            [
+                mkdir('apache'),
+                mkdir(
+                    'nginx',
+                    [
+                        mkfile('nginx.conf'),
+                    ]
+                ),
+            ]
+        ),
+        mkdir(
+            'consul',
+            [
+                mkfile('config.json'),
+                mkfile('file.tmp'),
+                mkdir('data'),
+            ]
+        ),
+        mkfile('hosts'),
+        mkfile('resolve'),
+    ]
+);
 
 function getFilesCount($dir)
 {
@@ -35,9 +47,12 @@ function getFilesCount($dir)
 
     $children = getChildren($dir);
 
-    $desCount = array_map(function ($child) {
-        return getFilesCount($child);
-    }, $children);
+    $desCount = array_map(
+        function ($child) {
+            return getFilesCount($child);
+        },
+        $children
+    );
 
     return array_sum($desCount);
 }
@@ -46,13 +61,19 @@ function getSubdirectoriesInfo($dir)
 {
     $children = getChildren($dir);
 
-    $filtered = array_filter($children, function ($child) {
-        return isDirectory($child);
-    });
+    $filtered = array_filter(
+        $children,
+        function ($child) {
+            return isDirectory($child);
+        }
+    );
 
-    return array_map(function ($child) {
-        return [getName($child), getFilesCount($child)];
-    }, $filtered);
+    return array_map(
+        function ($child) {
+            return [getName($child), getFilesCount($child)];
+        },
+        $filtered
+    );
 }
 
 // print_r(getSubdirectoriesInfo($tree));

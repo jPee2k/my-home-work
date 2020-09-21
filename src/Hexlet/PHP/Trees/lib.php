@@ -30,6 +30,7 @@ function mkfile(string $name, array $meta = [])
 
 /**
  * Return children
+ *
  * @example
  * getChildren(mkdir('etc')); // []
  * getChildren(mkdir('etc', [mkfile('name')])); // [<file>]
@@ -41,6 +42,7 @@ function getChildren($node)
 
 /**
  * Return meta
+ *
  * @example
  * getMeta(mkfile('etc')); // []
  * getMeta(mkfile('etc', ['owner' => 'root'])); // ['owner' => 'root']
@@ -52,6 +54,7 @@ function getMeta($node)
 
 /**
  * Return name
+ *
  * @example
  * getName(mkfile('etc')); // etc
  * getName(mkdir('/')); // /
@@ -79,6 +82,7 @@ function isDirectory($node)
 
 /**
  * Recursively flatten `tree` up to `depth` times.
+ *
  * @example
  * flatten_depth([1]); // [1];
  * flatten_depth([1, 2, [3, 4]]); // [1, 2, 3, 4];
@@ -109,9 +113,12 @@ function map($func, $tree)
         $children = $node['children'] ?? [];
 
         if (isDirectory($node)) {
-            $updatedChildren = array_map(function ($n) use (&$f, &$map) {
-                return $map($f, $n);
-            }, $children);
+            $updatedChildren = array_map(
+                function ($n) use (&$f, &$map) {
+                    return $map($f, $n);
+                },
+                $children
+            );
             return array_merge($updatedNode, ['children' => $updatedChildren]);
         }
 
@@ -159,15 +166,21 @@ function filter($func, $tree)
         $children = $node['children'] ?? null;
 
         if (isDirectory($node)) {
-            $updatedChildren = array_map(function ($n) use (&$f, &$filter) {
-                return $filter($f, $n);
-            }, $children);
+            $updatedChildren = array_map(
+                function ($n) use (&$f, &$filter) {
+                    return $filter($f, $n);
+                },
+                $children
+            );
 
-            $filteredChildren = array_filter($updatedChildren, function ($n) {
-                if ($n != null) {
-                    return $n;
+            $filteredChildren = array_filter(
+                $updatedChildren,
+                function ($n) {
+                    if ($n != null) {
+                        return $n;
+                    }
                 }
-            });
+            );
             return array_merge($node, ['children' => array_values($filteredChildren)]);
         }
 

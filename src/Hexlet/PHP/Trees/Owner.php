@@ -11,20 +11,34 @@ use function Home\Work\Hexlet\PHP\Trees\getName;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$tree = mkdir('/', [
-    mkdir('etc', [
-        mkdir('apache'),
-        mkdir('nginx', [
-            mkfile('nginx.conf'),
-        ], ['owner' => 'lol']),
-        mkdir('consul', [
-            mkfile('config.json'),
-            mkdir('data'),
-        ]),
-    ], ['owner' => 'lol']),
-    mkdir('logs'),
-    mkfile('hosts', ['owner' => 'lol'])
-]);
+$tree = mkdir(
+    '/',
+    [
+        mkdir(
+            'etc',
+            [
+                mkdir('apache'),
+                mkdir(
+                    'nginx',
+                    [
+                        mkfile('nginx.conf'),
+                    ],
+                    ['owner' => 'lol']
+                ),
+                mkdir(
+                    'consul',
+                    [
+                        mkfile('config.json'),
+                        mkdir('data'),
+                    ]
+                ),
+            ],
+            ['owner' => 'lol']
+        ),
+        mkdir('logs'),
+        mkfile('hosts', ['owner' => 'lol'])
+    ]
+);
 
 function changeOwner($tree, $owner)
 {
@@ -38,9 +52,12 @@ function changeOwner($tree, $owner)
 
     $children = getChildren($tree);
 
-    $newChildren = array_map(function ($child) use ($owner) {
-        return changeOwner($child, $owner);
-    }, $children);
+    $newChildren = array_map(
+        function ($child) use ($owner) {
+            return changeOwner($child, $owner);
+        },
+        $children
+    );
 
     return mkdir($name, $newChildren, $newMeta);
 }

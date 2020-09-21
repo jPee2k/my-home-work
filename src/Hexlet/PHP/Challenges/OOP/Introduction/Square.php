@@ -5,7 +5,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\OOP\Introduction;
 /**
  * Генератор квадратов
  * https://ru.hexlet.io/challenges/php_introduction_to_oop_square
- * 
+ *
  * src/Square.php
  * Реализуйте класс Square для описания квадратов. У квадрата есть
  * только одно свойство — сторона. Реализуйте метод getSide,

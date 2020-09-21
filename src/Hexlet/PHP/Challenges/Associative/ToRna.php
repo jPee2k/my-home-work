@@ -17,14 +17,14 @@ namespace Home\Work\Hexlet\PHP\Challenges\Associative\ToRna;
  * A -> U
 
  * src/Solution.php
- * Напишите функцию toRna, которая принимает на вход цепь 
+ * Напишите функцию toRna, которая принимает на вход цепь
  * ДНК и возвращает соответствующую цепь РНК (совершает транскрипцию РНК).
 
  * <?php
 
  * toRna('ACGTGGTCTTAA');
  * // → 'UGCACCAGAAUU'
- * 
+ *
  */
 
 function toRna($dnk)
@@ -55,10 +55,10 @@ function toRna($dnk)
  * {
  *     $search = ['A', 'C', 'G', 'T'];
  *     $replace = ['u', 'g', 'c', 'a'];
- * 
+ *
  *     return strtoupper(str_replace($search, $replace, $dnk));
  * }
- * 
+ *
  */
 
 // $dnk = 'ACGTGGTCTTAA';

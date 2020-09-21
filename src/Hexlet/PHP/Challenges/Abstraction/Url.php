@@ -24,7 +24,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Abstraction\Url;
  * функция принимает значение по умолчанию, которое возвращается
  * тогда, когда в запросе не было такого параметра
  * toString($data) - Геттер. Преобразует урл в строковой вид.
- * 
+ *
  * <?php
 
  * $url = Url\make('https://hexlet.io/community?q=low');

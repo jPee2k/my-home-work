@@ -20,20 +20,27 @@ const FREE_EMAIL_DOMAINS = [
 
 function getFreeDomainsCount($emails)
 {
-    $domains = array_map(function ($mail) {
-        return substr($mail, strpos($mail, '@') + 1);
-    }, $emails);
+    $domains = array_map(
+        function ($mail) {
+            return substr($mail, strpos($mail, '@') + 1);
+        },
+        $emails
+    );
 
     $freeDomains = array_intersect($domains, FREE_EMAIL_DOMAINS);
 
-    $uniqFreeDomains = array_reduce($freeDomains, function ($acc, $domain) {
-        if (!array_key_exists($domain, $acc)) {
-            $acc[$domain] = 1;
-        } else {
-            $acc[$domain] += 1;
-        }
-        return $acc;
-    }, []);
+    $uniqFreeDomains = array_reduce(
+        $freeDomains,
+        function ($acc, $domain) {
+            if (!array_key_exists($domain, $acc)) {
+                $acc[$domain] = 1;
+            } else {
+                $acc[$domain] += 1;
+            }
+            return $acc;
+        },
+        []
+    );
 
     return $uniqFreeDomains;
 }
@@ -41,8 +48,8 @@ function getFreeDomainsCount($emails)
 // $result = getFreeDomainsCount($emails);
 // print_r($result);
 
-# Array (
-#     'gmail.com' => 3
-#     'yandex.ru' => 2
-#     'hotmail.com' => 2
-#  )
+// Array (
+// 'gmail.com' => 3
+// 'yandex.ru' => 2
+// 'hotmail.com' => 2
+// )

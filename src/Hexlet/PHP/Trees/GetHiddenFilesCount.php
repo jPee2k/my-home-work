@@ -10,21 +10,33 @@ use function Home\Work\Hexlet\PHP\Trees\getName;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$tree = mkdir('/', [
-    mkdir('etc', [
-        mkdir('apache', []),
-        mkdir('nginx', [
-            mkfile('.nginx.conf', ['size' => 800]),
-        ]),
-        mkdir('.consul', [
-            mkfile('.config.json', ['size' => 1200]),
-            mkfile('data', ['size' => 8200]),
-            mkfile('raft', ['size' => 80]),
-        ]),
-    ]),
-    mkfile('.hosts', ['size' => 3500]),
-    mkfile('resolve', ['size' => 1000]),
-]);
+$tree = mkdir(
+    '/',
+    [
+        mkdir(
+            'etc',
+            [
+                mkdir('apache', []),
+                mkdir(
+                    'nginx',
+                    [
+                        mkfile('.nginx.conf', ['size' => 800]),
+                    ]
+                ),
+                mkdir(
+                    '.consul',
+                    [
+                        mkfile('.config.json', ['size' => 1200]),
+                        mkfile('data', ['size' => 8200]),
+                        mkfile('raft', ['size' => 80]),
+                    ]
+                ),
+            ]
+        ),
+        mkfile('.hosts', ['size' => 3500]),
+        mkfile('resolve', ['size' => 1000]),
+    ]
+);
 
 function getHiddenFilesCount($node)
 {
@@ -38,9 +50,12 @@ function getHiddenFilesCount($node)
 
     $children = getChildren($node);
 
-    $descendantsCount = array_map(function ($child) {
-        return getHiddenFilesCount($child);
-    }, $children);
+    $descendantsCount = array_map(
+        function ($child) {
+            return getHiddenFilesCount($child);
+        },
+        $children
+    );
 
     return array_sum($descendantsCount);
 }

@@ -24,7 +24,7 @@ namespace Home\Work\Hexlet\PHP\OOP;
  * containNumbers (по-умолчанию false) - требование содержать хотя бы одну цифру
  * Массив ошибок в ключах содержит название опции, а в значении
  * текст указывающий на ошибку (тексты можно подсмотреть в тестах)
-*/
+ */
 
 class PasswordValidator
 {
@@ -49,7 +49,7 @@ class PasswordValidator
         if (mb_strlen($password) < $this->options['minLength']) {
             $errors['minLength'] = 'too small';
         }
-        
+
         if ($this->options['containNumbers'] && !$this->hasNumber($password)) {
             $errors['containNumbers'] = 'should contain at least one number';
         }

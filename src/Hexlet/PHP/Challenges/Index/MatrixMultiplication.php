@@ -24,7 +24,7 @@ require __DIR__ . '/../../../../../vendor/autoload.php';
  * возвращает новую матрицу — результат их произведения.
 
  * Примеры
- * 
+ *
  * <?php
  * $matrixA = [[1, 2], [3, 2]];
  * $matrixB = [[3, 2], [1, 1]];
@@ -89,7 +89,6 @@ function isMatrix(array $array)
     $sum = [];
 
     foreach ($array as $item) {
-
         if (!is_array($item)) {
             return false;
         }
@@ -128,14 +127,14 @@ function getRow($matrix)
  *     [1, 2, 1],
  *     [0, 1, 0]
  * ];
- * 
+ *
  * $matrixB = [
  *     [2, 5],
  *     [6, 7],
  *     [1, 8]
  * ];
- * 
- * 
+ *
+ *
  * $matrixC = [
  *     [1, 2, 2],
  *     [3, 1, 1]
@@ -145,7 +144,7 @@ function getRow($matrix)
  *     [3, 1],
  *     [1, 5]
  * ];
- * 
+ *
  * $matrixF = [
  *     [1, 2],
  *     [3, 2]

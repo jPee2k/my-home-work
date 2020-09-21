@@ -12,9 +12,11 @@ class DeckOfCards
 
     public function __construct(array $cards)
     {
-        $this->cards = collect($cards)->unique()->map(function ($card, $key) {
+        $this->cards = collect($cards)->unique()->map(
+            function ($card, $key) {
                 return array_fill(0, 4, $card);
-            })->collapse();
+            }
+        )->collapse();
     }
 
     public function getShuffled()

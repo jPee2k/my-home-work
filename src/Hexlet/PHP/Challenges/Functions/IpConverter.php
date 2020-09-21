@@ -5,7 +5,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\IpConverter;
 /*
  * IP конвертер
  * https://ru.hexlet.io/challenges/php_functions_ip_converter
- * 
+ *
  * Solution.php
  * Реализуйте функции ipToInt() и intToIp(), которые преобразовывают
  * представление IP-адреса из десятичного формата с точками в 32-битное
@@ -28,7 +28,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Functions\IpConverter;
     intToIp(0); // '0.0.0.0'
     intToIp(4294967295); // '255.255.255.255'
 
- * Подсказки * 
+ * Подсказки *
  * IPv4 https://ru.wikipedia.org/wiki/IPv4
  */
 

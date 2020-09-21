@@ -6,13 +6,13 @@ namespace Home\Work\Hexlet\PHP\Challenges\Associative\FromPairs;
 
 /*
  * src\AssociativeArrays.php
- * Реализуйте функцию fromPairs, которая принимает на вход массив, состоящий из 
+ * Реализуйте функцию fromPairs, которая принимает на вход массив, состоящий из
  * массивов-пар, и возвращает ассоциативный массив, полученный из этих пар.
 
  * Примечания
- * Если при конструировании объекта попадаются совпадающие ключи, то берётся 
+ * Если при конструировании объекта попадаются совпадающие ключи, то берётся
  * ключ из последнего массива-пары:
- 
+
  * <?php
 
  * fromPairs([['cat', 5], ['dog', 6], ['cat', 11]]);
@@ -23,7 +23,7 @@ namespace Home\Work\Hexlet\PHP\Challenges\Associative\FromPairs;
 
  * fromPairs([['fred', 30], ['barney', 40]]);
  * // ['fred' => 30, 'barney' => 40]
- * 
+ *
  */
 
 function fromPairs($pairs)

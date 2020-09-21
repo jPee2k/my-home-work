@@ -21,20 +21,20 @@ namespace Home\Work\Hexlet\PHP\Challenges\OOP\Introduction;
 
 class Circle
 {
-    private $_radius;
+    private $radius;
 
     public function __construct($radius)
     {
-        $this->_radius = $radius;
+        $this->radius = $radius;
     }
 
     public function getArea()
     {
-        return pi() * ($this->_radius ** 2);
+        return pi() * ($this->radius ** 2);
     }
 
     public function getCircumference()
     {
-        return 2 * pi() * $this->_radius;
+        return 2 * pi() * $this->radius;
     }
 }

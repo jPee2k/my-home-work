@@ -11,9 +11,12 @@ function getManWithLeastFriends(array $users)
     if (empty($users)) {
         return null;
     }
-    return minValue($users, function ($user) {
-        return count($user['friends']);
-    });
+    return minValue(
+        $users,
+        function ($user) {
+            return count($user['friends']);
+        }
+    );
 }
 
 $users = [

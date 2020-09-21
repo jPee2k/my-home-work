@@ -9,20 +9,34 @@ use function Home\Work\Hexlet\PHP\Trees\getChildren;
 
 require __DIR__ . '/../../../../vendor/autoload.php';
 
-$tree = mkdir('/', [
-    mkdir('etc', [
-        mkdir('apache'),
-        mkdir('nginx', [
-            mkfile('nginx.conf'),
-        ], ['owner' => 'lol']),
-        mkdir('consul', [
-            mkfile('config.json'),
-            mkdir('data'),
-        ]),
-    ], ['owner' => 'lol']),
-    mkdir('logs'),
-    mkfile('hosts', ['owner' => 'lol'])
-]);
+$tree = mkdir(
+    '/',
+    [
+        mkdir(
+            'etc',
+            [
+                mkdir('apache'),
+                mkdir(
+                    'nginx',
+                    [
+                        mkfile('nginx.conf'),
+                    ],
+                    ['owner' => 'lol']
+                ),
+                mkdir(
+                    'consul',
+                    [
+                        mkfile('config.json'),
+                        mkdir('data'),
+                    ]
+                ),
+            ],
+            ['owner' => 'lol']
+        ),
+        mkdir('logs'),
+        mkfile('hosts', ['owner' => 'lol'])
+    ]
+);
 
 function getNodeCount($node)
 {
@@ -32,9 +46,12 @@ function getNodeCount($node)
 
     $children = getChildren($node);
 
-    $descendantsCount = array_map(function ($child) {
-        return getNodeCount($child);
-    }, $children);
+    $descendantsCount = array_map(
+        function ($child) {
+            return getNodeCount($child);
+        },
+        $children
+    );
 
     return 1 + array_sum($descendantsCount);
 }
