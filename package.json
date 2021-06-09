@@ -13,7 +13,8 @@
   "author": "jPee",
   "license": "ISC",
   "dependencies": {
-    "@hexlet/immutable-fs-trees": "^0.5.1"
+    "@hexlet/immutable-fs-trees": "^0.5.1",
+    "lodash": "^4.17.21"
   },
   "bugs": {
     "url": "https://github.com/jPee2k/my-home-work/issues"
