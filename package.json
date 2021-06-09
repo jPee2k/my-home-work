@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "This repo was created for storing my homework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jPee2k/my-home-work.git"
+  },
+  "author": "jPee",
+  "license": "ISC",
+  "dependencies": {
+    "@hexlet/immutable-fs-trees": "^0.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/jPee2k/my-home-work/issues"
+  },
+  "homepage": "https://github.com/jPee2k/my-home-work#readme"
+}
