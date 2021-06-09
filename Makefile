@@ -2,6 +2,10 @@ install:
 	npm ci
 	composer install
 
+update:
+	npm update
+	composer update
+
 test:
 	npm test
 
