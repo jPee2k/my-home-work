@@ -350,12 +350,25 @@ MigrationBackup/
 .ionide/
 
 #add my rules
-/.vscode/
-/.idea/
-/vendor/
-/src/tmp
-/src/specialist
-logs
+.vscode
+.idea
+
+node_modules/
+vendor/
+
+src/tmp
+src/specialist
+
+logs/
+*.log
+*.pdf
+*.psd
 *.swo
 *.swp
 *.cache
+
+npm-debug.*
+
+Thumbs.db
+__MACOSX
+.DS_Store
