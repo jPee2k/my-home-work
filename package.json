@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "This repo was created for storing my homework.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --bail",
+    "test-windows": "node --experimental-vm-modules --no-warnings node_modules/jest/bin/jest --bail"
   },
   "repository": {
     "type": "git",
@@ -14,8 +16,19 @@
   "license": "ISC",
   "dependencies": {
     "@hexlet/immutable-fs-trees": "^0.5.1",
+    "@babel/core": "^7.14.8",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "jest": "^27.0.6",
+    "jest-cli": "^27.0.6",
     "lodash": "^4.17.21",
     "path": "^0.12.7"
+  },
+  "jest": {
+    "verbose": true
   },
   "bugs": {
     "url": "https://github.com/jPee2k/my-home-work/issues"

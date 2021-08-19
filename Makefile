@@ -7,7 +7,7 @@ update:
 	composer update
 
 test:
-	npm test
+	npm run test-windows
 
 lint:
 	npx eslint .
