@@ -10,10 +10,10 @@ test:
 	npm run test-windows
 
 lint:
-	npx eslint .
+	npx eslint ./src/Hexlet/JS/
 
 lint-fix:
-	npx eslint --fix .
+	npx eslint --fix ./src/Hexlet/JS/
 
 publish:
 	npm publish --dry-run
