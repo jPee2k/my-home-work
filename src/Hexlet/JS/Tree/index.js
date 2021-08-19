@@ -1,5 +1,7 @@
 // import {mkdir, mkfile, getChildren, isFile, getName} from '@hexlet/immutable-fs-trees';
-const {mkdir, mkfile, getChildren, isFile, getName, getMeta} = require('@hexlet/immutable-fs-trees');
+const {
+  mkdir, mkfile, getChildren, isFile, getName, getMeta,
+} = require('@hexlet/immutable-fs-trees');
 const path = require('path');
 const _ = require('lodash');
 
@@ -12,10 +14,9 @@ const tree = mkdir('/', [
   mkdir('bin', [
     mkfile('.ls'),
     mkfile('cat'),
-    mkdir('.trash', [], {owner: 'root'}),
+    mkdir('.trash', [], { owner: 'root' }),
   ]),
 ]);
-
 
 const depthFirstSearch = (tree) => {
   // Распечатываем содержимое узла
@@ -34,7 +35,6 @@ const depthFirstSearch = (tree) => {
   children.forEach(depthFirstSearch);
 };
 
-
 const changeOwner = (tree, owner) => {
   const name = getName(tree);
   const meta = _.cloneDeep(getMeta(tree));
@@ -45,13 +45,10 @@ const changeOwner = (tree, owner) => {
     return mkfile(name, meta);
   }
 
-  const children = getChildren(tree).map((child) => {
-    return changeOwner(child, owner);
-  });
+  const children = getChildren(tree).map((child) => changeOwner(child, owner));
 
   return mkdir(name, children, meta);
 };
-
 
 const getNodesCount = (tree) => {
   if (isFile(tree)) {
@@ -69,7 +66,6 @@ const getNodesCount = (tree) => {
   return 1 + _.sum(descendantCounts);
 };
 
-
 const isHidden = (tree) => getName(tree).startsWith('.');
 
 const getHiddenFilesCount = (tree) => {
@@ -82,7 +78,6 @@ const getHiddenFilesCount = (tree) => {
 
   return _.sum(children);
 };
-
 
 const getFileSizes = (tree) => {
   if (isFile(tree)) {
@@ -119,7 +114,6 @@ const findFilesByName = (tree, str) => {
 
   return iter(tree, getName(tree));
 };
-
 
 // console.log(JSON.stringify(changeOwner(tree, 'jPee')));
 // console.log(getNodesCount(tree));
