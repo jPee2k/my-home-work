@@ -1,6 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "test": "jest --colors"
+    "test": "jest --colors",
+    "test-windows": "node --experimental-vm-modules --no-warnings ../../../../../node_modules/jest/bin/jest  --colors"
   }
 }

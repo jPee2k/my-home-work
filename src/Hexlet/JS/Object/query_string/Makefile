@@ -2,4 +2,4 @@ console:
 	@node-console
 
 test:
-	npm test -s
+	@ npm run test-windows -s
