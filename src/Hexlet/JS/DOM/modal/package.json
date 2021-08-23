@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "jest --colors",
+    "test-windows": "node --experimental-vm-modules --no-warnings ../../../../../node_modules/jest/bin/jest --bail --colors"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "regenerator-runtime": "*",
+    "core-js": "*"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "*",
+    "@testing-library/jest-dom": "*",
+    "@testing-library/user-event": "*"
+  }
+}
