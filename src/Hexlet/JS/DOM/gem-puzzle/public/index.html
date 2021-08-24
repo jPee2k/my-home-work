@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <style>
+    td {
+      width: 70px;
+      height: 70px;
+
+      text-align: center;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    th {
+      font-weight: 700;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="gem-puzzle d-flex align-items-center justify-content-center" style="height: 100vh">
+  <table class="table-bordered" tabindex="1" autofocus>
+    <thead>
+      <tr>
+        <th colspan="2" class="p-3" data-target="steps">0 steps</th>
+        <th colspan="2" class="p-3" data-target="record">record: 0</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="p-3">10</td>
+        <td class="p-3">11</td>
+        <td class="p-3">6</td>
+        <td class="p-3">4</td>
+      </tr>
+      <tr>
+        <td class="p-3">14</td>
+        <td class="p-3">2</td>
+        <td class="p-3">12</td>
+        <td class="p-3">1</td>
+      </tr>
+      <tr>
+        <td class="p-3">3</td>
+        <td class="p-3">13</td>
+        <td class="p-3">9</td>
+        <td class="p-3">8</td>
+      </tr>
+      <tr>
+        <td class="p-3">5</td>
+        <td class="p-3">7</td>
+        <td class="p-3">15</td>
+        <td class="p-3 table-active"></td>
+      </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="4">
+        <button type="button" class="btn btn-danger m-1">Reset</button>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
+
+<script defer type="module" src="../src/index.js"></script>
+</body>
+</html>
